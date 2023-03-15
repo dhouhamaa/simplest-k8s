@@ -2,6 +2,8 @@ apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: jade-shooter
+  annotations:
+    poc/test: true
 spec:
   rules:
   - host: jade-shooter.rancher.localhost
