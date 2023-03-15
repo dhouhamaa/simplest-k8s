@@ -13,8 +13,6 @@ spec:
     spec:
       containers:
       - name: api-test
-        args:
-            - /bin/sh
-            - -ec
-            - "echo "The date is 15/03/2023"
-        image: curlimages/curl
+        command: ['sh', '-c', 'echo "Hello, Kubernetes!" && sleep 3600']
+        image: busybox:latest
+      restartPolicy: Never
