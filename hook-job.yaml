@@ -1,0 +1,20 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: api-test-trigger
+  annotations:
+    argocd.argoproj.io/hook: PostSync
+    argocd.argoproj.io/hook-delete-policy: HookSucceeded
+spec:
+  template:
+    metadata:
+      labels:
+        name: api-test
+    spec:
+      containers:
+      - name: api-test
+        args:
+            - /bin/sh
+            - -ec
+            - "echo "The date is 15/03/2023"
+        image: curlimages/curl
