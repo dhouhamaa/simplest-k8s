@@ -3,7 +3,7 @@ kind: Ingress
 metadata:
   name: jade-shooter
   annotations:
-    poc/test: true
+    poc/test: test-for-iac-platform
 spec:
   rules:
   - host: jade-shooter.rancher.localhost
